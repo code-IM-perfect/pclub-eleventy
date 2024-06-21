@@ -1,4 +1,6 @@
 gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
+
 // split text in iitk
 let iitk = document.querySelector("h1 span.iitk");
 let text = iitk.textContent.split("");
@@ -76,6 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   let desktop = gsap.timeline({
+    scrollTrigger: {
+      trigger: "section.desktop",
+      start: "top top",
+      end: "+=600%",
+      scrub: 3,
+      pin: true,
+    },
   });
 
   desktop.delay(1);
