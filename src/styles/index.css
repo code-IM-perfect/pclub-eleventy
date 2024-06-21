@@ -13,3 +13,51 @@ body {
   margin: 0;
 }
 
+section.hero {
+  height: 80vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 2.6rem;
+
+    .pclub {
+      color: var(--secondary);
+    }
+    .iitk {
+      color: var(--primary);
+
+      span {
+        display: inline-block;
+      }
+    }
+    .heroCursor {
+      animation: blinking 1s ease-out infinite;
+    }
+
+    margin: 0;
+  }
+  p {
+    color: gainsboro;
+    margin: 0.7rem;
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
