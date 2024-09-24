@@ -87,9 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  desktop.delay(1);
-
   desktop
+    .from("section.desktop", {
+      opacity: 0,
+      scale: 0.5,
+      filter: "blur(3rem)",
+      duration: 1,
+    })
     .fromTo(
       ".bar",
       {
@@ -100,7 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
         scaleX: 1,
         scaleY: 0.1,
         duration: 0.75,
-      }
+      },
+      "+=1"
     )
     .to(".bar", {
       scale: 1,
@@ -249,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         display: "none",
       },
-      "+=1.5"
+      "+=2"
     )
     .set(".man", {
       display: "block",
@@ -259,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         display: "none",
       },
-      "+=6"
+      "+=4"
     )
     .set(".post-command .input", {
       text: "",
@@ -410,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         animationName: "crash",
       },
-      "+=1"
+      "+=0"
     )
     .set(
       "section.desktop",
@@ -424,14 +429,14 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         filter: "url(#filter-2)",
       },
-      "+=0.5s"
+      "+=0s"
     )
     .set(
       "section.desktop",
       {
-        filter: "url(#filter)",
+        filter: "none",
       },
-      "+=0.4s"
+      "+=1s"
     )
     .set(
       "section.desktop",
@@ -443,9 +448,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .set(
       "section.desktop",
       {
-        filter: "url(#filter)",
+        filter: "none",
       },
-      "+=0.3s"
+      "+=1s"
     )
     .set(
       "section.desktop",
@@ -457,23 +462,23 @@ document.addEventListener("DOMContentLoaded", () => {
     .set(
       "section.desktop",
       {
-        filter: "url(#filter)",
+        filter: "none",
       },
-      "+=0.4s"
+      "+=1s"
     )
     .set(
       "section.desktop",
       {
         filter: "url(#filter-2)",
       },
-      "+=0.7s"
+      "+=0.5s"
     )
     .set(
       ".terminal-window",
       {
         display: "none",
       },
-      "+=2"
+      "+=1.5"
     )
     .set("section.desktop", {
       filter: "url(#filter-3)",
@@ -483,7 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         display: "none",
       },
-      "+=1.5"
+      "+=2"
     )
     .set("section.desktop", {
       filter: "none",

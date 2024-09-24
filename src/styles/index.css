@@ -102,7 +102,7 @@ section.hero {
 
 section.desktop {
   height: 100vh;
-  margin-top: 30vh;
+  /* margin-top: 30vh; */
   background-image: url(/images/homePage/wallpaper.avif);
   background-size: cover;
   background-position: center;
