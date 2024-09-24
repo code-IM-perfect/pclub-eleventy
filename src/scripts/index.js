@@ -1,81 +1,168 @@
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
-// split text in iitk
-let iitk = document.querySelector("h1 span.iitk");
-let text = iitk.textContent.split("");
-let result = "";
-text.forEach(function (char) {
-  result += char.trim() === "" ? " " : "<span>" + char + "</span>";
-});
-iitk.innerHTML = result;
+// gsap.set("h1 span.pclub", {
+//   text: "",
+// });
 
-gsap.set("h1 span.pclub", {
-  text: "",
-});
+// gsap.set("h1 span.iitk span", {
+//   opacity: 0,
+// });
 
-gsap.set("h1 span.iitk span", {
-  opacity: 0,
-});
+gsap.set(".widget", { display: "none", opacity: 0 });
+gsap.set(".terminal", { display: "none", opacity: 0 });
+gsap.set(
+  ".neofetch,.post-command,.man,.links,.sudo,.screenOfDeath,.screenOfDeath .jk",
+  {
+    display: "none",
+  }
+);
 
 console.log("Yo this is the Pclub Website");
 
 document.addEventListener("DOMContentLoaded", () => {
-  let heroIntro = gsap.timeline({
-    ease: "expo.out",
-  });
+  let heroIntro = gsap.timeline();
 
   heroIntro
     .to(
-      "h1 span.pclub",
+      ".entry",
       {
-        text: {
-          value: "Programming Club",
-          speed: 0.9,
-        },
-      },
-      "+=2"
-    )
-    .fromTo(
-      "h1 span.iitk span",
-      {
-        y: "100%",
-        scale: 0.5,
-      },
-      {
-        y: 0,
-        opacity: 1,
         scale: 1,
-        stagger: 0.05,
-        ease: "expo.out",
-        duration: 0.5,
+        duration: 1,
+        ease: "expo.inOut",
       },
-      "+=0.1"
+      "+=1"
     )
-    .from(
-      "section.hero p",
+    .set(
+      "h1 span.p",
+      {
+        display: "inline-block",
+      },
+      "+=0.5"
+    )
+    .set(
+      "h1 span",
+      {
+        display: "inline-block",
+      },
+      "+=0.5"
+    )
+    .set(".entry", {
+      background: "var(--primary)",
+    })
+    .set(
+      "h1 div.iitk",
+      {
+        opacity: 1,
+      },
+      "+=0.5"
+    )
+    .set(".entry", {
+      background: "var(--secondary)",
+    })
+    .to(
+      ".entry",
       {
         opacity: 0,
-        filter: "blur(10rem)",
-        ease: "power3.out",
-        duration: 1,
-        scale: 0,
+        filter: "blur(5rem)",
+        ease: "expo.inOut",
       },
-      "+=0"
+      "+=0.5"
+    )
+    .to(
+      "h1 img",
+      {
+        opacity: 1,
+        ease: "expo.inOut",
+      },
+      "<"
+    )
+    .to(
+      ".entry",
+      {
+        background: "#94dfff",
+        ease: "expo.out",
+        duration: 1,
+      },
+      "<+=0.2"
+    )
+    .to(
+      "h1 span",
+      {
+        color: "var(--secondary)",
+        ease: "expo.inOut",
+      },
+      "-=1"
+    )
+    .to(
+      "h1 div.iitk",
+      {
+        color: "var(--primary)",
+        ease: "expo.inOut",
+      },
+      "<"
+    )
+    .to("header", {
+      opacity: 1,
+      ease: "expo.inOut",
+    })
+    .to(
+      "h1 img",
+      {
+        opacity: 0,
+        ease: "expo.inOut",
+      },
+      "<"
+    )
+    .to(
+      "section.hero p",
+      {
+        opacity: 1,
+        ease: "expo.inOut",
+      },
+      "<"
     );
+  //   .to(
+  //     "h1 span.pclub",
+  //     {
+  //       text: {
+  //         value: "Programming Club",
+  //         speed: 0.9,
+  //       },
+  //     },
+  //     "+=1.5"
+  //   )
+  //   .fromTo(
+  //     "h1 span.iitk span",
+  //     {
+  //       y: "100%",
+  //       scaleY: 0,
+  //     },
+  //     {
+  //       y: 0,
+  //       opacity: 1,
+  //       scaleY: 1,
+  //       stagger: 0.08,
+  //       ease: "elastic.out(0.6,0.4)",
+  //       duration: 0.5,
+  //     },
+  //     "+=0.1"
+  //   )
+  //   .to(
+  //     "section.hero p",
+  //     {
+  //       opacity: 1,
+  //       filter: "blur(0rem)",
+  //       ease: "power3.out",
+  //       duration: 0.8,
+  //       scale: 1,
+  //     },
+  //     "+=0"
+  //   );
 
   gsap.defaults({
     ease: "power4.out",
   });
-
-  gsap.set(".widget", { display: "none", opacity: 0 });
-  gsap.set(".terminal", { display: "none", opacity: 0 });
-  gsap.set(
-    ".neofetch,.post-command,.man,.links,.sudo,.screenOfDeath,.screenOfDeath .jk",
-    {
-      display: "none",
-    }
-  );
 
   let desktop = gsap.timeline({
     scrollTrigger: {

@@ -1,0 +1,136 @@
+<div class="grid">
+	{% assign Blogs = collections.blog | reverse | limit: 8 %}
+  {% for blog in Blogs %}
+  <a class="cardContainer" href="{{ blog.url }}">
+    <div
+      class="image"
+      style="background-image: url({{ blog.data.image.url }});"
+    ></div>
+    <h4>{{ blog.data.title }}</h4>
+    <div class="line">
+      <p>{{ blog.date | dateFormat }}</p>
+      <p class="sep">•</p>
+      <p>{{ blog.content | readingTime }}</p>
+    </div>
+    <div class="tags">
+      {% for tag in blog.data.tags %} 
+        {% if tag != "blog" %} 
+          <p>{{ tag }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    gap: 6rem;
+    place-items: center;
+	  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	  margin: 0rem clamp(1rem, 2rem, 30vw);
+    /* grid-auto-rows: 1fr; */
+
+    .cardContainer {
+      display: grid;
+      border-radius: 0.75rem;
+      height: 100%;
+      min-height: 24rem;
+      width: 100%;
+      max-width: 30rem;
+      text-align: left;
+      /* grid-template-rows: 12fr auto auto 1fr; */
+      /* grid-template-rows: subgrid; */
+      align-items: center;
+      box-shadow: 0px 0px 20px 1px var(--color);
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	    color: white;
+	    text-decoration: none;
+      overflow: hidden;
+    }
+
+    .image {
+      border-radius: 0.75rem;
+      margin: 1rem;
+      height: 18rem;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      align-self: normal;
+    }
+
+    div.line {
+      display: flex;
+      /* justify-content: center; */
+      margin: 0rem 1.7rem;
+      color: lightgrey;
+      p.sep{
+        margin: 0 0.5rem;
+      }
+    }
+
+    .tags{
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0.5rem 1.6rem 1.7rem;
+
+      p{
+        border: solid 0.15rem var(--color);
+        padding: 0.2rem 0.6rem;
+        margin: 0.3rem;
+        border-radius: 0.8rem;
+      }
+    }
+
+    p {
+      align-self: baseline;
+      font-size: 0.8rem;
+      margin: 0.1rem 0;
+    }
+
+    h4 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin: 0.1rem 1.5rem;
+      text-decoration: underline 0.2rem var(--color);
+      text-underline-offset: 0.15rem;
+    }
+
+    .cardContainer{
+      --color: var(--secondary);
+		  --highlight: var(--primary);
+    }
+
+    .cardContainer:nth-child(even){
+      --color: var(--primary);
+      --highlight: var(--secondary);
+    }
+
+    p,
+    h4 {
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .cardContainer:hover {
+      background-color: var(--color);
+      color: #09080f;
+      box-shadow: 0px 0px 70px 10px color-mix(in srgb, var(--color) 70%, transparent);
+      transform: scale(1.2);
+      h4 {
+        color: #09080f;
+        text-decoration: underline 0.2rem var(--dark);
+        text-underline-offset: 0.2rem;
+      }
+      p{
+        color: var(--dark);
+      }
+      .tags p{
+        border-color: var(--dark);
+        border-width: 0.2rem;
+        color: var(--dark);
+        transition: none;
+      }
+    }
+  }
+</style>

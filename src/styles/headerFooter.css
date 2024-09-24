@@ -1,0 +1,267 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1rem;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 2.2rem;
+      width: 2.2rem;
+      margin: 0.5rem;
+    }
+
+    h2 {
+      text-transform: capitalize;
+      font-size: 1.8rem;
+      margin: auto 0.5rem;
+      color: var(--light);
+    }
+  }
+
+  nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: var(--dark);
+
+    display: none;
+    place-items: center;
+  }
+
+  .buttons {
+    display: flex;
+
+    i {
+      font-size: 1.5rem;
+      padding: 1.2rem;
+    }
+
+    .search {
+      display: flex;
+
+      h3 {
+        display: none;
+      }
+    }
+
+    button {
+      border: none;
+      background: none;
+      padding: 0;
+      color: var(--light);
+      cursor: pointer;
+    }
+
+    .hamburgerMenu {
+      position: relative;
+      z-index: 3;
+    }
+  }
+}
+
+footer {
+  margin-top: 20vh;
+
+  .logo {
+    display: grid;
+    place-items: center;
+    img {
+      width: 3rem;
+    }
+    h3 {
+      margin: 0.5rem;
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    li {
+      text-align: center;
+      margin: 0.5rem;
+    }
+
+    a {
+      font-size: 1.5rem;
+      padding: 0.3rem 0.2rem;
+      text-decoration: underline 0.1rem var(--secondary);
+      text-underline-offset: 0.2rem;
+
+      svg {
+        display: none;
+      }
+    }
+
+    li#home {
+      display: none;
+    }
+  }
+
+  h4 {
+    text-align: center;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: min-content;
+
+    i {
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      --high: var(--bg);
+      text-decoration: none;
+      color: var(--dark);
+      background: var(--bg, white);
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      border-radius: 0.5rem;
+
+      padding: 0.5rem;
+      margin: 0.55rem;
+
+      /* box-shadow: 0 0 0.7rem 0.25rem var(--high); */
+    }
+
+    a.instagrm {
+      --bg: linear-gradient(
+        45deg,
+        #ffd600 0%,
+        #ff7a00 25%,
+        #ff0069 50%,
+        #d300c5 75%,
+        #7638fa 100%
+      );
+      color: var(--light);
+      position: relative;
+      box-shadow: none;
+
+      font-size: 1.5rem;
+      padding: 0.4rem 0.5rem;
+    }
+
+    /* a.instagrm::before,
+    a.instagrm::after {
+      content: "";
+      position: absolute;
+      inset: -0.1rem;
+      z-index: -1;
+      background: var(--bg);
+      filter: blur(0.4rem);
+      opacity: 0.9;
+    } */
+
+    a.twtr,
+    a.githb {
+      --bg: white;
+      color: black;
+      /* --high: rgba(255, 255, 255, 0.8); */
+      /* box-shadow: 0 0 0.8rem 0.15rem var(--high); */
+    }
+
+    a.githb {
+      font-size: 1.5rem;
+      padding: 0.4rem 0.5rem;
+    }
+
+    a.youtb {
+      color: white;
+      --bg: red;
+      --high: red;
+    }
+
+    a.discord {
+      font-size: 1.2rem;
+      color: white;
+      --bg: #5865f2;
+    }
+
+    a.linkdin {
+      font-size: 1.5rem;
+      padding: 0.4rem 0.5rem;
+
+      color: white;
+      --bg: #0a78b5;
+    }
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    text-align: center;
+    margin: 2rem;
+  }
+
+  a {
+    color: var(--primary);
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    position: relative;
+    /* text-decoration: underline wavy 0.19rem yellow; */
+    /* text-underline-offset: 0.4rem; */
+    /* text-decoration-skip-ink: none; */
+
+    svg {
+      position: absolute;
+      content: "";
+      height: 0.8rem;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      stroke: var(--secondary);
+    }
+  }
+
+  #home {
+    translate: 0.15rem;
+    path {
+      stroke-dasharray: calc(1px + 7 * 37px) 10000px;
+    }
+  }
+  #about {
+    translate: 0.15rem;
+    path {
+      stroke-dasharray: calc(7 * 37px) 10000px;
+    }
+  }
+  #blogs {
+    translate: 0.4rem;
+    path {
+      stroke-dasharray: calc(6 * 37px) 10000px;
+    }
+  }
+  #roadmaps {
+    translate: 0.35rem;
+    path {
+      stroke-dasharray: calc(12 * 37.2px) 10000px;
+    }
+  }
+  #projects {
+    translate: 0.1rem;
+    path {
+      stroke-dasharray: calc(9 * 37.1px) 10000px;
+    }
+  }
+}
