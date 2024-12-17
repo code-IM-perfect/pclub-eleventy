@@ -25,10 +25,12 @@ section.hero {
     display: none;
     color: var(--dark);
   }
+
   h1 div.iitk {
     opacity: 0;
     color: var(--dark);
   }
+
   p {
     opacity: 0;
   }
@@ -56,6 +58,7 @@ section.desktop {
     display: none;
     opacity: 0;
   }
+
   .neofetch,
   .post-command,
   .man,
@@ -92,6 +95,7 @@ section.hero {
     .pclub {
       color: var(--secondary);
     }
+
     .iitk {
       color: var(--primary);
       overflow-y: hidden;
@@ -104,6 +108,7 @@ section.hero {
 
     margin: 0;
   }
+
   p {
     color: white;
     font-weight: 300;
@@ -183,6 +188,7 @@ section.desktop {
         }
       }
     }
+
     .right {
       display: flex;
       margin-right: 0.7vw;
@@ -191,6 +197,7 @@ section.desktop {
         scale: 0.5 1;
         translate: 0 -5%;
       }
+
       .expand {
         margin: 0.5vh 0vw;
         padding: 0.3vh 0.3vw;
@@ -257,6 +264,7 @@ section.desktop {
           text-decoration: white underline 1px;
           position: relative;
         }
+
         a.manInstagram:hover::after {
           content: "";
           position: absolute;
@@ -273,6 +281,7 @@ section.desktop {
             #ff34bf 100%
           );
         }
+
         a.manInstagram:hover {
           background: linear-gradient(
             45deg,
@@ -286,9 +295,11 @@ section.desktop {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+
         a.manDiscord {
           color: white;
         }
+
         a.manDiscord:hover {
           color: #7d4bf7;
           text-decoration: solid underline 2px;
@@ -323,18 +334,23 @@ section.desktop {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+
         .githb {
           color: #cacaca;
         }
+
         .lnkdin {
           color: #2e87b8;
         }
+
         .youtb {
           color: #ff4a4a;
         }
+
         .x-twtr {
           color: #08baeb;
         }
+
         .discrd {
           color: #976eff;
         }
@@ -342,6 +358,7 @@ section.desktop {
         .key {
           color: #7dcfff;
         }
+
         .key i {
           color: #7dcfff;
         }
@@ -365,19 +382,23 @@ section.desktop {
       height: 0;
     }
   }
+
   .wh {
     color: #fff;
   }
+
   .screenOfDeath {
     color: white;
     height: 90vh;
     place-items: center;
     font-family: "Poppins", sans-serif;
+
     h3 {
       font-size: 9vh;
       margin: 2vh auto;
       font-weight: 600;
     }
+
     h4 {
       font-size: 4.5vh;
       letter-spacing: 0.1vh;
@@ -388,6 +409,7 @@ section.desktop {
     .lowMess {
       margin: 2vh auto;
     }
+
     p {
       font-size: 2vh;
       margin: 1vh auto;
@@ -442,7 +464,6 @@ section.desktop {
     font-family: "Bebas Neue", sans-serif;
   }
 
-
   section.desktop {
     .bar .left {
       width: 40vw;
@@ -464,12 +485,15 @@ section.desktop {
 
         .neofetch {
           margin-top: 0.5vh;
+
           p {
             font-size: 1.7vh;
           }
+
           .output {
             margin-left: 1.5vw;
           }
+
           .ascii {
             display: none;
           }
@@ -488,6 +512,7 @@ section.desktop {
 
           .manBottomLine {
             translate: 0 -40%;
+
             p {
               margin: 0;
               font-size: 1.5vh;
@@ -508,6 +533,7 @@ section.desktop {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
+
           a.manInstagram::after {
             content: "";
             position: absolute;
@@ -524,26 +550,32 @@ section.desktop {
               #ff34bf 100%
             );
           }
+
           a.manDiscord {
             color: #7d4bf7;
             text-decoration: solid underline 1px;
           }
         }
+
         .links a span.arrow {
           margin-left: 0.2rem;
         }
       }
     }
+
     .screenOfDeath {
       place-items: center;
+
       div {
         max-width: 90vw;
       }
+
       h3 {
         font-size: 6vh;
         margin: 2vh auto;
         font-weight: 600;
       }
+
       h4 {
         font-size: 3vh;
         letter-spacing: 0.1vh;
@@ -554,10 +586,12 @@ section.desktop {
       .lowMess {
         margin: 2vh auto;
       }
+
       p {
         font-size: 1.7vh;
         margin: 1vh auto;
       }
+
       p br {
         display: none;
       }
@@ -575,15 +609,13 @@ section.desktop {
 }
 
 /* Tablet adjustments */
-@media only screen and (min-width: 768px){
-
+@media only screen and (min-width: 768px) {
 }
 
 /* Desktop adjustments */
 @media only screen and (min-width: 992px) {
-  section.hero h1{
+  section.hero h1 {
     font-size: 5rem;
-    
   }
 }
 
@@ -602,12 +634,15 @@ section.featured {
   0% {
     opacity: 0;
   }
+
   40% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
   }
